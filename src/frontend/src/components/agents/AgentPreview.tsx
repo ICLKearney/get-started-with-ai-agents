@@ -15,7 +15,7 @@ import { AgentPreviewChatBot } from "./AgentPreviewChatBot";
 import { MenuButton } from "../core/MenuButton/MenuButton";
 import { IChatItem } from "./chatbot/types";
 import { Waves } from "./Waves";
-import { BuiltWithBadge } from "./BuiltWithBadge";
+
 
 import styles from "./AgentPreview.module.css";
 
@@ -188,6 +188,7 @@ export function AgentPreview({ agentDetails }: IAgentPreviewProps): ReactNode {
   };
 
   useEffect(() => {
+    newThread(); // Clear any existing messages and cookies when the component mounts, owing to white screen issues
     loadChatHistory();
   }, []);
 
@@ -601,11 +602,7 @@ export function AgentPreview({ agentDetails }: IAgentPreviewProps): ReactNode {
           )}
         </div>
 
-        {agentDetails.agentPlaygroundUrl && agentDetails.agentPlaygroundUrl.length > 0 ? (
-          <BuiltWithBadge className={styles.builtWithBadge} agentPlaygroundUrl={agentDetails.agentPlaygroundUrl} />
-        ) : (
-          <></>
-        )}
+        
       </div>
 
       {/* Settings Panel */}

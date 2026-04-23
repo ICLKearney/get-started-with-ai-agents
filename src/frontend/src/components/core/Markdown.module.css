@@ -4,9 +4,13 @@
   color: var(--colorNeutralForeground1);
 }
 
+
 .markdown p {
   margin-bottom: 16px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
+
 
 .markdown h1,
 .markdown h2,

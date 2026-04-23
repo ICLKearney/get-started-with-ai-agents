@@ -176,13 +176,14 @@ const CodeBlock = memo<ICodeBlockProps>(
 
 CodeBlock.displayName = "CodeBlock";
 
+
 function Paragraph({
   children,
   className,
 }: PropsWithChildren<{
   className?: string;
 }>) {
-  return <span className={className}>{children} </span>;
+  return <p className={className}>{children}</p>;
 }
 
 export function Markdown({
